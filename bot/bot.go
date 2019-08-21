@@ -3,17 +3,18 @@ package bot
 import (
 	"bytes"
 	"fmt"
-	"github.com/indes/flowerss-bot/bot/fsm"
-	"github.com/indes/flowerss-bot/config"
-	"github.com/indes/flowerss-bot/model"
-	"golang.org/x/net/proxy"
-	tb "gopkg.in/tucnak/telebot.v2"
 	"html/template"
 	"log"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/JellalLeonhardt/flowerss-bot/bot/fsm"
+	"github.com/JellalLeonhardt/flowerss-bot/config"
+	"github.com/JellalLeonhardt/flowerss-bot/model"
+	"golang.org/x/net/proxy"
+	tb "gopkg.in/tucnak/telebot.v2"
 )
 
 var (
@@ -473,7 +474,7 @@ func makeHandle() {
 /set 设置订阅
 /help 帮助
 /import 导入OPML文件
-详细使用方法请看：https://github.com/indes/flowerss-bot
+详细使用方法请看：https://github.com/JellalLeonhardt/flowerss-bot
 `
 		_, _ = B.Send(m.Chat, message)
 	})
@@ -672,5 +673,17 @@ func makeHandle() {
 			_, _ = B.Send(m.Chat, "如果需要导入订阅，请发送正确的OPML文件。")
 		}
 
+	})
+
+	B.Handle("/searchall", func(m *tb.Message) {
+		contents := model.SearchAllContent(m.Payload)
+		var msgs []string
+		for idx, c := range contents {
+			msgs = append(msgs, fmt.Sprintf("%v. [%v](%v)", idx, c.Title, c.RawLink))
+		}
+		B.Send(m.Chat, strings.Join(msgs, "\n"), &tb.SendOptions{
+			DisableWebPagePreview: true,
+			ParseMode: tb.ModeMarkdown,
+		})
 	})
 }

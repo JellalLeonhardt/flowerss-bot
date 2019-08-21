@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/indes/flowerss-bot/config"
+	"github.com/JellalLeonhardt/flowerss-bot/config"
 	"github.com/jinzhu/gorm"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql" //mysql driver

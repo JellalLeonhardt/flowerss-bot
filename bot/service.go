@@ -2,8 +2,8 @@ package bot
 
 import (
 	"fmt"
-	"github.com/indes/flowerss-bot/config"
-	"github.com/indes/flowerss-bot/model"
+	"github.com/JellalLeonhardt/flowerss-bot/config"
+	"github.com/JellalLeonhardt/flowerss-bot/model"
 	tb "gopkg.in/tucnak/telebot.v2"
 	"log"
 )

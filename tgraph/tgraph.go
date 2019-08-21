@@ -2,7 +2,7 @@ package tgraph
 
 import (
 	"fmt"
-	"github.com/indes/flowerss-bot/config"
+	"github.com/JellalLeonhardt/flowerss-bot/config"
 	"github.com/meinside/telegraph-go"
 	"log"
 )
@@ -14,7 +14,7 @@ const (
 
 var (
 	authToken  = config.TelegraphToken
-	authorUrl  = "https://github.com/indes/flowerss-bot"
+	authorUrl  = "https://github.com/JellalLeonhardt/flowerss-bot"
 	authorName = "flowerss"
 	verbose    = false
 	//client     *telegraph.Client

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/indes/flowerss-bot/bot"
-	"github.com/indes/flowerss-bot/task"
+	"github.com/JellalLeonhardt/flowerss-bot/bot"
+	"github.com/JellalLeonhardt/flowerss-bot/task"
 )
 
 func main() {

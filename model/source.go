@@ -3,7 +3,7 @@ package model
 import (
 	"errors"
 	"github.com/SlyMarbo/rss"
-	"github.com/indes/flowerss-bot/config"
+	"github.com/JellalLeonhardt/flowerss-bot/config"
 	"log"
 )
 

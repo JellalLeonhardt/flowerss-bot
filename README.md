@@ -1,7 +1,7 @@
 # flowerss bot
 
 [![Build Status](https://travis-ci.org/indes/flowerss-bot.svg?branch=master)](https://travis-ci.org/indes/flowerss-bot)
-[![Go Report Card](https://goreportcard.com/badge/github.com/indes/rssflow)](https://goreportcard.com/report/github.com/indes/flowerss-bot)
+[![Go Report Card](https://goreportcard.com/badge/github.com/indes/rssflow)](https://goreportcard.com/report/github.com/JellalLeonhardt/flowerss-bot)
 ![GitHub](https://img.shields.io/github/license/indes/flowerss-bot.svg)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Findes%2Fflowerss-bot.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Findes%2Fflowerss-bot?ref=badge_shield)
 
@@ -29,12 +29,12 @@ docker run -d -v ~/data/flowerss:/var/flowerss indes/flowerss-bot -b <bot token>
 
 **由于 GoReleaser 不支持 Cgo，如果要使用 SQLite 做为数据库，请下载源码自行编译。**
 
-从 [Releases](https://github.com/indes/flowerss-bot/releases) 页面下载对应的版本。
+从 [Releases](https://github.com/JellalLeonhardt/flowerss-bot/releases) 页面下载对应的版本。
 
 ### 源码安装
 
 ```shell
-git clone https://github.com/indes/flowerss-bot && cd flowerss-bot
+git clone https://github.com/JellalLeonhardt/flowerss-bot && cd flowerss-bot
 make build
 ./flowerss-bot
 ```
@@ -66,7 +66,7 @@ sqlite:
 | bot_token       | Telegram Bot Token                        | 必填                                       |
 | telegraph_token | Telegraph Token, 用于转存原文到 Telegraph | 可忽略（不转存原文到 Telegraph ）          |
 | update_interval | RSS 源扫描间隔（分钟）                    | 可忽略（默认 10）                          |
-| error_threshold | 源最大出错次数                    | 可忽略（默认 100）                          |
+| error_threshold | 源最大出错次数                            | 可忽略（默认 100）                         |
 | socks5          | 用于无法正常 Telegram API 的环境          | 可忽略（能正常连接上 Telegram API 服务器） |
 | mysql           | MySQL 数据库配置                          | 可忽略（使用 SQLite ）                     |
 | sqlite          | SQLite 配置                               | 可忽略（已配置mysql时，该项失效）          |
@@ -74,7 +74,7 @@ sqlite:
 ### Telegraph Token 申请
 
 ```shell
-curl https://api.telegra.ph/createAccount?short_name=flowerss&author_name=flowerss&author_url=https://github.com/indes/flowerss-bot
+curl https://api.telegra.ph/createAccount?short_name=flowerss&author_name=flowerss&author_url=https://github.com/JellalLeonhardt/flowerss-bot
 ```
 
 返回的 JSON 中 access_token 字段值即为 Telegraph Token

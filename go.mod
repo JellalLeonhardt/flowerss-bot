@@ -1,4 +1,4 @@
-module github.com/indes/flowerss-bot
+module github.com/JellalLeonhardt/flowerss-bot
 
 require (
 	cloud.google.com/go v0.34.0 // indirect

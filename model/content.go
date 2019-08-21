@@ -1,10 +1,11 @@
 package model
 
 import (
-	"github.com/SlyMarbo/rss"
-	"github.com/indes/flowerss-bot/config"
-	"github.com/indes/flowerss-bot/tgraph"
 	"strings"
+
+	"github.com/SlyMarbo/rss"
+	"github.com/JellalLeonhardt/flowerss-bot/config"
+	"github.com/JellalLeonhardt/flowerss-bot/tgraph"
 )
 
 type Content struct {
@@ -73,4 +74,12 @@ func DeleteContentsBySourceID(sid uint) {
 func PublishItem(source *Source, item *rss.Item, html string) string {
 	url, _ := tgraph.PublishHtml(source.Title, item.Title, item.Link, html)
 	return url
+}
+
+func SearchAllContent(key string) []Content {
+	db := getConnect()
+	defer db.Close()
+	var contents []Content
+	db.Where("title LIKE ?", "%"+key+"%").Find(&contents)
+	return contents
 }
